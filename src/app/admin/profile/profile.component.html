@@ -1,0 +1,77 @@
+<div class="container-fluid p-0 pt-3">
+    <div class="modal-header">
+        <h3 class="col-12 fs-3 fw-bold text-center text-dark">My Profile</h3>
+    </div>
+    <div class="modal-body">
+        <form [formGroup]="profileForm" (ngSubmit)="editProfile(profileForm.value)">
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Full Name: </label>
+                <input type="text"  class="form-control"
+                formControlName="name"
+                [(ngModel)]="profile.name"
+                >
+                <app-profile-validate
+                    [formField]="profileForm.get('name')"
+                    key = "Họ và tên"
+                ></app-profile-validate>
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Phone: </label>
+                <input type="text" class="form-control"
+                formControlName="phone"
+                [(ngModel)]="profile.phone"
+                >
+                <app-profile-validate
+                    [formField]="profileForm.get('phone')"
+                    key = "Phone"
+                ></app-profile-validate>
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Email: </label>
+                <input type="text" class="form-control"
+                formControlName="email"
+                [(ngModel)]="profile.email"
+                >
+                <app-profile-validate
+                [formField]="profileForm.get('email')"
+                key = "Email"
+            ></app-profile-validate>
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">BirthDay: {{profile.birthday}}</label>
+                <input type="date" class="form-control" 
+                formControlName="birthday"
+                [(ngModel)]="profile.birthday"
+                >
+                <app-profile-validate
+                [formField]="profileForm.get('birthday')"
+                key = "BirthDay"
+            ></app-profile-validate>
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Job apply: </label>
+                <input type="text" class="form-control"
+                formControlName="job"
+                [(ngModel)]="profile.job"
+                >
+                <app-profile-validate
+                [formField]="profileForm.get('job')"
+                key = "Job"
+            ></app-profile-validate>
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Desc: </label>
+                <input type="text" class="form-control"
+                formControlName="desc"
+                [(ngModel)]="profile.desc"
+                >
+                <app-profile-validate
+                [formField]="profileForm.get('desc')"
+                key = "Description"
+            ></app-profile-validate>
+            </div>
+            <button type="submit" class="btn btn-dark col-2 m-auto" [disabled]="profileForm.invalid">EDIT</button>
+          </form>		
+    </div>
+</div>
+

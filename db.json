@@ -1,0 +1,63 @@
+{
+  "profiles": [
+    {
+      "name": "Phạm Thu Trang",
+      "phone": "0354610770",
+      "email": "trangpt@gmail.com",
+      "birthday": "2022-04-23",
+      "job": "Web Designer",
+      "desc": "hahahahah",
+      "id": 1
+    }
+  ],
+  "skills": [
+    {
+      "id": 1,
+      "name": "Java",
+      "mark": 90,
+      "status": 0
+    },
+    {
+      "id": 2,
+      "name": "PHP",
+      "mark": 90,
+      "status": 1
+    },
+    {
+      "id": 3,
+      "name": "JavaScript",
+      "mark": 90,
+      "status": 0
+    }
+  ],
+  "projects": [
+    {
+      "id": 0,
+      "name": "dự án 1",
+      "time_start": "22/02/2022",
+      "end_time": "30/03/2022",
+      "desc": "Mô tả dự án 1"
+    },
+    {
+      "id": 1,
+      "name": "dự án 2",
+      "time_start": "22/02/2022",
+      "end_time": "30/03/2022",
+      "desc": "Mô tả dự án 2"
+    }
+  ],
+  "educations": [
+    {
+      "name": "School 1",
+      "time_start": "26/01/2020",
+      "end_time": "22/03/2033",
+      "achievements": "Thành tích 1"
+    },
+    {
+      "name": "School 2",
+      "time_start": "26/01/2020",
+      "end_time": "22/03/2033",
+      "achievements": "Thành tích 2"
+    }
+  ]
+}

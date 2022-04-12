@@ -1,0 +1,45 @@
+<div class="container-fluid p-0 pt-3">
+    <div class="modal-header">
+        <h3 class="col-12 fs-3 fw-bold text-center text-dark">My Profile</h3>
+    </div>
+    <div class="modal-body">
+        <form [formGroup]="skillForm" (ngSubmit)="editSkill(skillForm.value)">
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Full Name: </label>
+                <input type="text"  class="form-control"
+                formControlName="name"
+                [(ngModel)]="skill.name"
+                >
+                <app-profile-validate
+                    [formField]="skillForm.get('name')"
+                    key = "Skill Name"
+                ></app-profile-validate>
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Mark: </label>
+                <input type="number" class="form-control"
+                formControlName="mark"
+                [(ngModel)]="skill.mark"
+                >
+                <app-profile-validate
+                    [formField]="skillForm.get('mark')"
+                    key = "Mark"
+                ></app-profile-validate>
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Status: </label>
+                <select class="form-select" formControlName="status">
+                    <option *ngIf="skill.status===0" value="0">Hiện</option>
+                    <option *ngIf="skill.status===1" value="1">Ẩn</option>
+                    <option value="0" selected >Hiển</option>
+                    <option value="1">Ẩn</option>
+                </select>
+            </div>
+            
+            
+            <button type="submit" class="btn btn-dark col-2 m-auto" [disabled]="skillForm.invalid">EDIT</button>
+          </form>		
+    </div>
+</div>
+
+

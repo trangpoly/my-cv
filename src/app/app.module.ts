@@ -4,17 +4,46 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { ClientComponent } from './client/client.component';
+import { AdminComponent } from './admin/admin.component';
+import { ProfileComponent } from './admin/profile/profile.component';
+import { EducationsComponent } from './admin/educations/educations.component';
+import { AsideComponent } from './admin/aside/aside.component';
+import { ProfileService } from './services/profile/profile.service';
+import { SkillService } from './services/skill/skill.service';
+import { ProjectService } from './services/project/project.service';
+import { EducationService } from './services/education/education.service';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { ProfileValidateComponent } from './admin/components/profile-validate/profile-validate.component';
+import { ListComponent } from './admin/skills/list/list.component';
+import { FormComponent } from './admin/skills/form/form.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ClientComponent,
+    AdminComponent,
+    ProfileComponent,
+    EducationsComponent,
+    AsideComponent,
+    ProfileValidateComponent,
+    ListComponent,
+    FormComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NgbModule
+    NgbModule,
+    FormsModule,
+    HttpClientModule,
+    ReactiveFormsModule
   ],
-  providers: [],
+  providers: [    
+    ProfileService,
+    SkillService,
+    ProjectService,
+    EducationService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

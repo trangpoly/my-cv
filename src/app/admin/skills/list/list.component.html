@@ -1,0 +1,25 @@
+<div class="container-fluid p-0 pt-3">
+    <h3 class="fs-3 fw-bold">List Skills</h3>
+    <a routerLink="/admin/skills/create" class="btn btn-outline-dark mb-2">Add Skill</a>
+    <table id="table_id" style="width:100%" class="table col-12 m-auto table-border table-hover">
+        <thead>
+          <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Name</th>
+            <th scope="col">Mark</th>
+            <th scope="col">Status</th>
+            <th scope="col" colspan="3">Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let skill of skills">
+            <th scope="row">{{skill.id}}</th>
+            <td>{{skill.name}}</td>
+            <td>{{skill.mark}} / 100</td>
+            <td class="col-2"><button type="button" class="btn btn-dark col-6 m-auto">Hiện</button></td>
+            <td><a routerLink="./edit/{{skill.id}}" class="text-dark"><i class="fas fa-edit"></i></a></td>
+            <td><a (click)="onRemove(skill.id)" class="text-dark"><i class="fas fa-trash-alt"></i></a></td>
+          </tr>
+        </tbody>
+      </table>
+</div>
