@@ -18,6 +18,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { ProfileValidateComponent } from './admin/components/profile-validate/profile-validate.component';
 import { ListComponent } from './admin/skills/list/list.component';
 import { FormComponent } from './admin/skills/form/form.component';
+import { ListProjectComponent } from './admin/projects/list-project/list-project.component';
+import { FormProjectComponent } from './admin/projects/form-project/form-project.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +32,8 @@ import { FormComponent } from './admin/skills/form/form.component';
     ProfileValidateComponent,
     ListComponent,
     FormComponent,
+    ListProjectComponent,
+    FormProjectComponent,
   ],
   imports: [
     BrowserModule,

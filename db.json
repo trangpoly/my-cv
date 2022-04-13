@@ -41,18 +41,18 @@
   ],
   "projects": [
     {
-      "id": 0,
+      "id": 2,
       "name": "dự án 1",
       "time_start": "22/02/2022",
       "end_time": "30/03/2022",
       "desc": "Mô tả dự án 1"
     },
     {
-      "id": 1,
-      "name": "dự án 2",
+      "id": 3,
+      "name": "dự án 1",
       "time_start": "22/02/2022",
       "end_time": "30/03/2022",
-      "desc": "Mô tả dự án 2"
+      "desc": "Mô tả dự án 1"
     }
   ],
   "educations": [
@@ -60,13 +60,15 @@
       "name": "School 1",
       "time_start": "26/01/2020",
       "end_time": "22/03/2033",
-      "achievements": "Thành tích 1"
+      "achievements": "Thành tích 1",
+      "id": 1
     },
     {
       "name": "School 2",
       "time_start": "26/01/2020",
       "end_time": "22/03/2033",
-      "achievements": "Thành tích 2"
+      "achievements": "Thành tích 2",
+      "id": 2
     }
   ]
 }
