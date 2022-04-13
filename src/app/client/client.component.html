@@ -9,14 +9,14 @@
                     <p class="p-3">CONTACT</p>
                 </div>
                 <div class="icon">
-                    <p><i class="fa fa-birthday-cake"></i>27/03/2002</p>
-                    <p><i class="fa fa-phone-alt"></i>0354610770</p>
-                    <p><i class="far fa-envelope"></i>trangpt@gmail.com</p>
+                    <p><i class="fa fa-birthday-cake"></i>{{profile.birthday}}</p>
+                    <p><i class="fa fa-phone-alt"></i>{{profile.phone}}</p>
+                    <p><i class="far fa-envelope"></i>{{profile.email}}</p>
                     <p><i class="fa fa-map-marker-alt"></i>Đông anh, Hà Nội</p>
                     <p><i class="fab fa-github-square"></i>Github</p>
                 </div>
             </div>
-            <div class="box-left mt-2">
+            <!-- <div class="box-left mt-2">
                 <div class="header">
                     <p class="p-3">LANGUAGE</p>
                 </div>
@@ -41,24 +41,14 @@
                     </div>
                 </div>
                 
-            </div>
+            </div> -->
             <div class="box-left mt-3 mb-5">
                 <div class="header">
                     <p class="p-3">SKILLS</p>
                 </div>
-                <div class="language">AI
+                <div class="language" *ngFor="let skill of skills">{{skill.name}}
                     <div class="skill-language">
-                        <div class="skill ai"></div>
-                    </div>
-                </div>
-                <div class="language">PS
-                    <div class="skill-language">
-                        <div class="skill ps"></div>
-                    </div>
-                </div>
-                <div class="language">WEB DESIGN
-                    <div class="skill-language">
-                        <div class="skill web"></div>
+                        <div class="skill {{skill.name}}" style="width: {{skill.mark}}%; background-color: rgb(255, 255, 255);"></div>
                     </div>
                 </div>
             </div>
@@ -67,12 +57,12 @@
     </div>
     <div class="right">
         <div class="name-div">
-            <h1>PHẠM THU TRANG</h1>
-            <p>WEB DESIGNER</p>
+            <h1>{{ profile.name | uppercase }}</h1>
+            <p>{{ profile.job | uppercase }}</p>
         </div>
         <div class="box-right">
             <h3 class="about">ABOUT ME</h3>
-            <p class="p2">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages</p>
+            <p class="p2">{{profile.desc}}</p>
         </div>
         <div class="box-right">
             <h3 class="education">EDUCATION</h3>

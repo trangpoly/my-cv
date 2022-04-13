@@ -1,9 +1,10 @@
 <div class="container-fluid p-0 pt-3">
     <div class="modal-header">
-        <h3 class="col-12 fs-3 fw-bold text-center text-dark">My Profile</h3>
+        <h3 *ngIf="id===undefined" class="col-12 fs-3 fw-bold text-center text-dark">Add Skill</h3>
+        <h3 *ngIf="id!==undefined" class="col-12 fs-3 fw-bold text-center text-dark">Edit Skill</h3>
     </div>
     <div class="modal-body">
-        <form [formGroup]="skillForm" (ngSubmit)="editSkill(skillForm.value)">
+        <form [formGroup]="skillForm" (ngSubmit)="onSkill(skillForm.value)">
             <div class="mb-3">
                 <label for="exampleInputEmail1" class="form-label">Full Name: </label>
                 <input type="text"  class="form-control"
@@ -26,18 +27,8 @@
                     key = "Mark"
                 ></app-profile-validate>
             </div>
-            <div class="mb-3">
-                <label for="exampleInputEmail1" class="form-label">Status: </label>
-                <select class="form-select" formControlName="status">
-                    <option *ngIf="skill.status===0" value="0">Hiện</option>
-                    <option *ngIf="skill.status===1" value="1">Ẩn</option>
-                    <option value="0" selected >Hiển</option>
-                    <option value="1">Ẩn</option>
-                </select>
-            </div>
-            
-            
-            <button type="submit" class="btn btn-dark col-2 m-auto" [disabled]="skillForm.invalid">EDIT</button>
+            <button *ngIf="id===undefined" type="submit" class="btn btn-dark col-2 m-auto">ADD</button>
+            <button *ngIf="id!==undefined" type="submit" class="btn btn-dark col-2 m-auto">EDIT</button>
           </form>		
     </div>
 </div>

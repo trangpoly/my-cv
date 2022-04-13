@@ -49,10 +49,27 @@ export class FormComponent implements OnInit {
         this.skill = data
       })
     }
+    else {
+      this.skill = {
+        name: '',
+        mark: 0
+    }
+    }
 
   }
-  editSkill(id: number){
-    
+  onSkill(obj: {name: string, mark: number, status: number}){
+    if(this.id!==undefined){
+      this.ss.updateSkill(this.id,obj).subscribe(data => {
+        this.router.navigate(['admin/skills']);
+      });
+      
+    }
+    else{
+      this.ss.createSkill(obj).subscribe(data => {
+        this.router.navigate(['admin/skills'])
+      });
+        
+    }
   }
 
 }

@@ -12,7 +12,7 @@ export class ProfileService {
   constructor(private http: HttpClient) { }
   
   getProfile(): Observable<any>{
-    return this.http.get(urlApi);
+    return this.http.get(`${urlApi}/1`);
   }
   updateProfile(id: number| string, data: any): Observable<any>{
     return this.http.put(`${urlApi}/${id}`, data);

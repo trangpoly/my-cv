@@ -7,8 +7,7 @@
             <th scope="col">ID</th>
             <th scope="col">Name</th>
             <th scope="col">Mark</th>
-            <th scope="col">Status</th>
-            <th scope="col" colspan="3">Action</th>
+            <th scope="col" colspan="2">Action</th>
           </tr>
         </thead>
         <tbody>
@@ -16,7 +15,6 @@
             <th scope="row">{{skill.id}}</th>
             <td>{{skill.name}}</td>
             <td>{{skill.mark}} / 100</td>
-            <td class="col-2"><button type="button" class="btn btn-dark col-6 m-auto">Hiện</button></td>
             <td><a routerLink="./edit/{{skill.id}}" class="text-dark"><i class="fas fa-edit"></i></a></td>
             <td><a (click)="onRemove(skill.id)" class="text-dark"><i class="fas fa-trash-alt"></i></a></td>
           </tr>
