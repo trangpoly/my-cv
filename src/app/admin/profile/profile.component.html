@@ -16,6 +16,12 @@
                 ></app-profile-validate>
             </div>
             <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Avatar: </label><br>
+                <input type="file" formControlName="avt" (change)="changeImg($event)"><br><br>
+                <img *ngIf="imageBase64" [src]="imageBase64" width="200px" alt=""><br>
+                <img *ngIf="!imageBase64" [src]="profile.avt" width="200px" alt=""><br>
+            </div>
+            <div class="mb-3">
                 <label for="exampleInputEmail1" class="form-label">Phone: </label>
                 <input type="text" class="form-control"
                 formControlName="phone"

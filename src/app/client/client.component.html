@@ -1,7 +1,7 @@
 <div class="container col-6 p-0 m-auto mt-2">
     <div class="left col-4">
         <div class="img-profile">
-            <img src="https://www.pngall.com/wp-content/uploads/12/Avatar-Profile.png" class="img-fluid " alt="">
+            <img [src]="profile.avt" class="img-fluid " alt="">
         </div>
         <div class="content">
             <div class="box-left mt-2">
@@ -16,32 +16,6 @@
                     <p><i class="fab fa-github-square"></i>Github</p>
                 </div>
             </div>
-            <!-- <div class="box-left mt-2">
-                <div class="header">
-                    <p class="p-3">LANGUAGE</p>
-                </div>
-                <div class="language">HTML
-                    <div class="skill-language">
-                        <div class="skill html"></div>
-                    </div>
-                </div>
-                <div class="language">CSS
-                    <div class="skill-language">
-                        <div class="skill css"></div>
-                    </div>
-                </div>
-                <div class="language">JavaScript
-                    <div class="skill-language">
-                        <div class="skill js"></div>
-                    </div>
-                </div>
-                <div class="language">PHP
-                    <div class="skill-language">
-                        <div class="skill php"></div>
-                    </div>
-                </div>
-                
-            </div> -->
             <div class="box-left mt-3 mb-5">
                 <div class="header">
                     <p class="p-3">SKILLS</p>
@@ -66,40 +40,21 @@
         </div>
         <div class="box-right">
             <h3 class="education">EDUCATION</h3>
-            <div class="detail-edu">
-                <p class="p3">2015-2019: <span>THCS Thụy Lâm</span></p>
+            <div class="detail-edu" *ngFor="let education of educations">
+                <p class="p3">{{education.time_start}} - {{education.end_time}}: <span>{{education.name}}</span></p>
                 <p class="p2">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit
-                </p>
-            </div>
-            <div class="detail-edu">
-                <p class="p3">2019-2020: <span>THPT Liên Hà</span></p>
-                <p class="p2">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit
-                </p>
-            </div>
-            <div class="detail-edu">
-                <p class="p3">2021-2023: <span>FPT Polytechnic</span></p>
-                <p class="p2">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit
+                    {{education.achievements}}
                 </p>
             </div>
         </div>
         <div class="box-right">
             <h3 class="project">PROJECTS</h3>
-            <div class="detail-proj">
-                <p class="p3">Dự án 1</p>
+            <div class="detail-proj" *ngFor="let project of projects">
+                <p class="p3">{{project.name}}</p>
                 <p class="p2">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit
+                    {{project.desc}}
                 </p>
             </div>
-            <div class="detail-proj">
-                <p class="p3">Dự án 2</p>
-                <p class="p2">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit
-                </p>
-            </div>
-
         </div>
     </div>
 </div>

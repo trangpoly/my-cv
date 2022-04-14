@@ -13,7 +13,7 @@ export class EducationService {
     return this.http.get(urlApi)
   }
   getEducation(id: number | string): Observable<any>{
-    return this.http.get(`${urlApi}/$${id}`)
+    return this.http.get(`${urlApi}/${id}`)
   }
   createEducation(data: any): Observable<any>{
     return this.http.post(urlApi, data)

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { EducationService } from 'src/app/services/education/education.service';
 
 @Component({
@@ -9,7 +10,8 @@ import { EducationService } from 'src/app/services/education/education.service';
 export class ListEducationComponent implements OnInit {
   educations: any
   constructor(
-    private es: EducationService
+    private es: EducationService,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
@@ -17,7 +19,20 @@ export class ListEducationComponent implements OnInit {
       this.educations = data;
     })
   }
+  onGetListEducation(){
+    this.es.getEducatons().subscribe(data => {
+      this.educations = data;
+    })
+  }
   onRemove(id: number){
-    console.log(id)
+    // console.log(id)
+    const confirm = window.confirm("Bạn chắc chắn muốn xóa?");
+    if(confirm){
+      this.es.removeEducation(id).subscribe(data => {
+        this.onGetListEducation();
+        this.router.navigate(['admin/educations'])
+    })
+    }
+    
   }
 }
