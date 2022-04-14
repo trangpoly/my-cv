@@ -1,0 +1,27 @@
+<div class="container-fluid p-0 pt-3">
+    <h3 class="fs-3 fw-bold">List Educations</h3>
+    <a routerLink="./create" class="btn btn-outline-dark mb-2">Add Education</a>
+    <table id="table_id" style="width:100%" class="table col-12 m-auto table-border table-hover">
+        <thead>
+          <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Name</th>
+            <th scope="col">Start Time</th>
+            <th scope="col">End Time</th>
+            <th scope="col">Achievements</th>
+            <th scope="col" colspan="2">Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let education of educations">
+            <th scope="row">{{education.id}}</th>
+            <td>{{education.name}}</td>
+            <td>{{education.time_start}}</td>
+            <td>{{education.end_time}}</td>
+            <td>{{education.achievements}}</td>
+            <td><a routerLink="./edit/{{education.id}}" class="text-dark"><i class="fas fa-edit"></i></a></td>
+            <td><a (click)="onRemove(education.id)" class="text-dark"><i class="fas fa-trash-alt"></i></a></td>
+          </tr>
+        </tbody>
+      </table>
+</div>

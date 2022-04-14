@@ -1,7 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AdminComponent } from './admin/admin.component';
-import { EducationsComponent } from './admin/educations/educations.component';
+import { FormEducationComponent } from './admin/education/form-education/form-education.component';
+import { ListEducationComponent } from './admin/education/list-education/list-education.component';
 import { ProfileComponent } from './admin/profile/profile.component';
 import { FormProjectComponent } from './admin/projects/form-project/form-project.component';
 import { ListProjectComponent } from './admin/projects/list-project/list-project.component';
@@ -63,7 +64,20 @@ const routes: Routes = [
       },
       {
         path: 'educations',
-        component: EducationsComponent
+        children: [
+          {
+            path: '',
+            component: ListEducationComponent
+          },
+          {
+            path: 'create',
+            component: FormEducationComponent
+          },
+          {
+            path: 'edit/:id',
+            component: FormEducationComponent
+          }
+        ]
       }
     ]
   }

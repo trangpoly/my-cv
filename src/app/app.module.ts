@@ -7,7 +7,6 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ClientComponent } from './client/client.component';
 import { AdminComponent } from './admin/admin.component';
 import { ProfileComponent } from './admin/profile/profile.component';
-import { EducationsComponent } from './admin/educations/educations.component';
 import { AsideComponent } from './admin/aside/aside.component';
 import { ProfileService } from './services/profile/profile.service';
 import { SkillService } from './services/skill/skill.service';
@@ -20,6 +19,8 @@ import { ListComponent } from './admin/skills/list/list.component';
 import { FormComponent } from './admin/skills/form/form.component';
 import { ListProjectComponent } from './admin/projects/list-project/list-project.component';
 import { FormProjectComponent } from './admin/projects/form-project/form-project.component';
+import { ListEducationComponent } from './admin/education/list-education/list-education.component';
+import { FormEducationComponent } from './admin/education/form-education/form-education.component';
 
 @NgModule({
   declarations: [
@@ -27,13 +28,14 @@ import { FormProjectComponent } from './admin/projects/form-project/form-project
     ClientComponent,
     AdminComponent,
     ProfileComponent,
-    EducationsComponent,
     AsideComponent,
     ProfileValidateComponent,
     ListComponent,
     FormComponent,
     ListProjectComponent,
     FormProjectComponent,
+    ListEducationComponent,
+    FormEducationComponent,
   ],
   imports: [
     BrowserModule,

@@ -43,30 +43,38 @@
     {
       "id": 2,
       "name": "dự án 1",
-      "time_start": "22/02/2022",
-      "end_time": "30/03/2022",
+      "time_start": " 2022-04-06",
+      "end_time": " 2022-04-15",
       "desc": "Mô tả dự án 1"
     },
     {
       "id": 3,
       "name": "dự án 1",
-      "time_start": "22/02/2022",
-      "end_time": "30/03/2022",
+      "time_start": " 2022-04-06",
+      "end_time": " 2022-04-15",
       "desc": "Mô tả dự án 1"
+    },
+    {
+      "name": "dự án 3",
+      "time_start": "2022-04-01",
+      "start_time": "",
+      "end_time": "2022-04-06",
+      "desc": "kakaka",
+      "id": 4
     }
   ],
   "educations": [
     {
       "name": "School 1",
-      "time_start": "26/01/2020",
-      "end_time": "22/03/2033",
+      "time_start": " 2022-04-06",
+      "end_time": " 2022-04-15",
       "achievements": "Thành tích 1",
       "id": 1
     },
     {
       "name": "School 2",
-      "time_start": "26/01/2020",
-      "end_time": "22/03/2033",
+      "time_start": " 2022-04-06",
+      "end_time": " 2022-04-15",
       "achievements": "Thành tích 2",
       "id": 2
     }
