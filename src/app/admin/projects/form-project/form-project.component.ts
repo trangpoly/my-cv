@@ -31,12 +31,6 @@ export class FormProjectComponent implements OnInit {
           Validators.required
         ]
       ),
-      start_time: new FormControl(
-        '',
-        [
-          Validators.required
-        ]
-      ),
       end_time: new FormControl(
         '',
         [
@@ -59,7 +53,7 @@ export class FormProjectComponent implements OnInit {
     if(this.id!==undefined){
       this.ps.getProject(this.id).subscribe(data => {
         this.project = data;
-        
+        console.log(data)
       })
     }
     else {
@@ -75,11 +69,13 @@ export class FormProjectComponent implements OnInit {
   onProject(obj:{name: string, time_end: string, end_time: string, desc: string}){
     if(this.id!==undefined){
       this.ps.updateProject(this.id, obj).subscribe(data => {
+        alert("Cập nhật Project thành công!");
         this.router.navigate(['admin/projects'])
       })
     }
     else {
       this.ps.createProject(obj).subscribe(data => {
+        alert("Thêm mới Project thành công!");
         this.router.navigate(['admin/projects'])
       })
     }

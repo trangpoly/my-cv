@@ -3,6 +3,7 @@
         <h3 *ngIf="id===undefined" class="col-12 fs-3 fw-bold text-center text-dark">Add Project</h3>
         <h3 *ngIf="id!==undefined" class="col-12 fs-3 fw-bold text-center text-dark">Edit Project</h3>
     </div>
+    <p>{{projectForm.value | json}}</p>
     <div class="modal-body">
         <form [formGroup]="projectForm" (ngSubmit)="onProject(projectForm.value)">
             <div class="mb-3">
@@ -49,7 +50,7 @@
             ></app-profile-validate>
             </div>
             <button *ngIf="id===undefined" type="submit" [disabled]="projectForm.invalid" class="btn btn-dark col-2 m-auto">ADD</button>
-            <button *ngIf="id!==undefined" type="submit" class="btn btn-dark col-2 m-auto">EDIT</button>
+            <button *ngIf="id!==undefined" type="submit" [disabled]="projectForm.invalid" class="btn btn-dark col-2 m-auto">EDIT</button>
           </form>		
     </div>
 </div>

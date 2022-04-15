@@ -28,7 +28,7 @@
                 ></app-profile-validate>
             </div>
             <button *ngIf="id===undefined" type="submit" [disabled]="skillForm.invalid" class="btn btn-dark col-2 m-auto">ADD</button>
-            <button *ngIf="id!==undefined" type="submit" class="btn btn-dark col-2 m-auto">EDIT</button>
+            <button *ngIf="id!==undefined" type="submit"[disabled]="skillForm.invalid" class="btn btn-dark col-2 m-auto">EDIT</button>
           </form>		
     </div>
 </div>

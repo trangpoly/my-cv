@@ -19,8 +19,8 @@ body {
     background-color: #171010;
     height: 100%;
     float: left;
-    z-index: 1;
-    position: fixed;
+    /* z-index: 1; */
+    position: absolute;
     box-shadow: 2px 0 2px #646464;
 }
 .img-profile {

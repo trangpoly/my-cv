@@ -9,13 +9,13 @@ import { SkillService } from 'src/app/services/skill/skill.service';
   styleUrls: ['./form.component.css']
 })
 export class FormComponent implements OnInit {
-  skillForm: FormGroup;
-  id: any;
   skill: any;
+  skillForm: FormGroup;  
+  id: any;
   constructor(
+    private ss: SkillService,
     private activeRouter: ActivatedRoute,
-    private router: Router,
-    private ss: SkillService
+    private router: Router
   ) { 
     this.skillForm = new FormGroup({
       name: new FormControl(
@@ -31,12 +31,6 @@ export class FormComponent implements OnInit {
           Validators.required,
           Validators.min(0),
           Validators.max(100)
-        ]
-      ),
-      status: new FormControl(
-        '',
-        [
-          Validators.required
         ]
       )
     })
@@ -61,12 +55,14 @@ export class FormComponent implements OnInit {
     if(this.id!==undefined){
       this.ss.updateSkill(this.id,obj).subscribe(data => {
         this.router.navigate(['admin/skills']);
+        alert("Cập nhật Skill thành công!");
       });
       
     }
     else{
       this.ss.createSkill(obj).subscribe(data => {
-        this.router.navigate(['admin/skills'])
+        this.router.navigate(['admin/skills']);
+        alert("Thêm mới Skill thành công!");
       });
         
     }

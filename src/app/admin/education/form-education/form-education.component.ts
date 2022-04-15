@@ -73,11 +73,13 @@ export class FormEducationComponent implements OnInit {
       if(this.id!==undefined){
         this.es.updateEducation(this.id, obj).subscribe(data => {
           this.router.navigate(['admin/educations'])
+          alert("Cập nhật Education thành công!");
         })
       }
       else {
         this.es.createEducation(obj).subscribe(data => {
           this.router.navigate(['admin/educations'])
+          alert("Thêm mới Education thành công!");
         })
       }
     }
